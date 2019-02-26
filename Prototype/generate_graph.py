@@ -31,7 +31,7 @@ def graph_section(df, catagory, filename, path, l_period):
     candlestick_ohlc(ax, ohlc.values, width=.6, colorup='grey', colordown='black')
 
     # save
-    if random.randint(1, 101) < 75:
+    if random.randint(1, 101) < 75: # change this value to control the training-testing split
         func = "train"
     else:
         func = "test"
@@ -76,7 +76,7 @@ def make_data(df, l_period, p_period, criteria):
 
 if __name__ == '__main__':
 
-    data = pd.read_csv("Data/aapl_us_d.csv")
+    data = pd.read_csv("rawdata/aapl_us_d.csv")
     stock_price_df = data
     stock_price_df['Date'] = pd.to_datetime(stock_price_df['Date'])
     stock_price_df["Date"] = stock_price_df["Date"].apply(mdates.date2num)

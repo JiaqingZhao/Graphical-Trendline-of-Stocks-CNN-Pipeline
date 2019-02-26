@@ -3,6 +3,14 @@ import os
 
 def image_processing(raw_data,data_path,height,width):
 
+    """
+    :param raw_data: path where raw data is stored
+    :param data_path: path where pre-processed images will be stored
+    :param height: new height of images
+    :param width: new width of images
+    :return:
+    """
+
     class_labels=[]
     category_count=0
     for i in os.walk(raw_data):
